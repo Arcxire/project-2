@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+
 import localFont from "next/font/local";
-import "./globals.css";
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+
+import { ModalProvider } from "@/providers/modal-provider";
+
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <UserButton />
             </SignedIn>
           </header>
-          <main>{children}</main>
+          <main>
+            <ModalProvider />
+            {children}
+            </main>
         </body>
       </html>
     </ClerkProvider>
