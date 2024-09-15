@@ -6,6 +6,7 @@ import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@c
 import { ModalProvider } from "@/providers/modal-provider";
 
 import "./globals.css";
+import { ToasterProvider } from "@/providers/toast-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </SignedIn>
           </header>
           <main>
+            <ToasterProvider />
             <ModalProvider />
             {children}
             </main>
