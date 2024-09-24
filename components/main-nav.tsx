@@ -21,7 +21,7 @@ export function MainNav({
         {
             href: `/${params.storeId}/billboards`,
             label: 'Billboards',
-            active: pathname === `/${params.storeId}/billboard`,
+            active: pathname === `/${params.storeId}/billboards`,
         },
         {
             href: `/${params.storeId}/settings`,
@@ -38,7 +38,7 @@ export function MainNav({
             <Link
                 key={route.href}
                 href={route.href}
-                className={cn("text-sm font-medium transition-colors hover:text-primary", route.active ? "text-black dark:text-white" : "text-muted-foreground")}
+                className={cn("text-sm font-medium transition-colors hover:text-slate-300", route.active ? "text-slate-300 dark:text-white" : "text-muted-foreground")}
             >
                 {route.label}
             </Link>
